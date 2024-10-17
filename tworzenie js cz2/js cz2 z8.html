@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS cz2 z8</title>
+</head>
+<body>
+    <i>Podaj długość boku:</i>
+    <input type="number" id="bok" ><br>
+    <button onclick="liczPole()">Licz pole</button>
+    <button onclick="liczObwod()">Licz obwód</button>
+    <p id="wynik"></p>
+
+    <script>
+        function pobierzBok() {
+            return parseFloat(document.getElementById("bok").value);
+        }
+    
+        function liczPole() {
+            var bok = pobierzBok();
+            if (bok > 0) {
+                document.getElementById("wynik").innerHTML = "P = a² = " + (bok * bok);
+            } 
+        }
+    
+        function liczObwod() {
+            var bok = pobierzBok();
+            if (bok > 0) {
+                document.getElementById("wynik").innerHTML = "Obw = 4a = " + (4 * bok);
+            } 
+        }
+    </script>
+    
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_z2d</title>
+</head>
+<body>
+     Podaj pierwszą liczbę:
+    <input type="text" id="liczba1"><br>
+
+     Podaj drugą liczbę:
+    <input type="text" id="liczba2" ><br>
+
+     Podaj trzecią liczbę:
+    <input type="text" id="liczba3"><br>
+
+    <button onclick="porownajLiczby()">Sprawdź</button>
+    <p id="wynik"></p>
+
+    <script>
+        function porownajLiczby() {
+            var liczba1 = parseFloat(document.getElementById("liczba1").value);
+            var liczba2 = parseFloat(document.getElementById("liczba2").value);
+            var liczba3 = parseFloat(document.getElementById("liczba3").value);
+
+            var najmniejsza = liczba1;
+            var największa = liczba1;
+
+            if (liczba2 < najmniejsza) {
+                najmniejsza = liczba2;
+            }
+            if (liczba3 < najmniejsza) {
+                najmniejsza = liczba3;
+            }
+
+            if (liczba2 > największa) {
+                największa = liczba2;
+            }
+            if (liczba3 > największa) {
+                największa = liczba3;
+            }
+
+            document.getElementById("wynik").innerHTML = "Najmniejsza liczba to: " + najmniejsza + "<br>Największa liczba to: " + największa;
+        }
+    </script>
+
+</body>
+</html>

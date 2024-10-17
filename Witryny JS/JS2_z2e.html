@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_z2e</title>
+</head>
+<body>  
+    Podaj Wyraz:
+    <input type="text" id="Wyraz"><br><br>
+    <button onclick="sprawdzWyraz()">Sprawdź</button>
+
+    <p id="wynik"></p>
+
+    <script>
+        function sprawdzWyraz() {
+            var wyraz = document.getElementById("Wyraz").value;
+
+            if (wyraz.length >= 6) {
+                var wynikDlugosc = "Wyraz ma co najmniej 6 znaków";
+            } else {
+                var wynikDlugosc = "Wyraz ma mniej niż 6 znaków";
+            }
+
+            if (wyraz.endsWith("kot")) {
+                var wynikKoniec = "Wyraz kończy się na 'kot'";
+            } else {
+                var wynikKoniec = "Wyraz nie kończy się na 'kot'";
+            }
+
+            document.getElementById("wynik").innerHTML = wynikDlugosc + "<br>" + wynikKoniec;
+        }
+    </script>
+</body>
+</html>

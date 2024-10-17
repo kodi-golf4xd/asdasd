@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js cz2 z6</title>
+</head>
+<body>
+   Podaj metraż mieszkania w metrach kwadratowych:<br>
+    <input type="number" id="metraz"><br>
+    Liczba pokoi z zamontowanym okablowaniem sieciowym:<br>
+    <input type="number" id="liczbaPokoi"><br>
+    <input type="checkbox" id="kafelki">Kafelki w łazience?<br>
+
+    <button onclick="obliczKoszt()">OBLICZ</button>
+    <p id="wynik"> </p>
+
+    <script>
+        function obliczKoszt() {
+            var metraz = parseInt(document.getElementById("metraz").value);
+            var liczbaPokoi = parseInt(document.getElementById("liczbaPokoi").value);
+            var czyKafelki = document.getElementById("kafelki").checked;
+
+            var kosztMetra = 4000;
+            var kosztOkablowania = 1000;
+            var kosztKafelkow = 2000;
+            var koszt = (metraz * kosztMetra) + (liczbaPokoi * kosztOkablowania);
+
+            if (czyKafelki) {
+                koszt += kosztKafelkow;
+            }
+
+            document.getElementById("wynik").innerHTML = "Koszt mieszkania: " + koszt + " zł";
+        }
+    </script>
+</body>
+</html>

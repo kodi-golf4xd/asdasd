@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS cz2 z7</title>
+</head>
+<body>
+    Podaj numer kawy:<br>
+    <input type="number" id="numerKawy"><br>
+    Podaj wagę w dekagramach:<br>
+    <input type="number" id="wagaKawy"><br>
+
+    <button onclick="obliczKoszt()">Zamów</button>
+    <p id="wynik"></p>
+
+    <script>
+        function obliczKoszt() {
+            var numerKawy = parseInt(document.getElementById("numerKawy").value);
+            var waga = parseInt(document.getElementById("wagaKawy").value);
+            var cenaZaDekagram = 0;
+
+            if (numerKawy === 1) {
+                cenaZaDekagram = 5; 
+            } else if (numerKawy === 2) {
+                cenaZaDekagram = 6; 
+            } else if (numerKawy === 3) {
+                cenaZaDekagram = 7; 
+            }
+            var koszt = waga * cenaZaDekagram;
+            document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi " + koszt + " zł";
+        }
+    </script>
+
+</body>
+</html>

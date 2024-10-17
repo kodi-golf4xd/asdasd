@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS cz1 z5</title>
+</head>
+<body>
+    <h1>Generowanie ciągu arytmetycznego</h1>
+
+    Pierwszy wyraz A1:<input type="number" id="pierwszyWyraz"><br>
+    Różnica ciągu R:<input type="number" id="roznica"><br>
+    Liczba wyrazów ciągu N:<input type="number" id="liczbaWyrazow"><br>
+    <button onclick="generujCiąg()">Generuj ciąg</button>
+
+    <p id="wynik"></p>
+    <script>
+        function generujCiąg() {
+            var a1 = parseInt(document.getElementById("pierwszyWyraz").value);
+            var r = parseInt(document.getElementById("roznica").value);
+            var n = parseInt(document.getElementById("liczbaWyrazow").value);
+            var ciag = "Ciąg arytmetyczny zawiera wyrazy: ";
+
+            for (var i = 0; i < n; i++) {
+                var wyraz = a1 + i * r; 
+                ciag += wyraz; 
+
+                if (i < n - 1) {
+                    ciag += ", ";
+                }
+            }
+
+            document.getElementById("wynik").innerHTML = ciag;
+        }
+    </script>
+
+</body>
+</html>
